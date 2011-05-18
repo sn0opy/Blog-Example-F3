@@ -1,0 +1,20 @@
+<h3>{{@pagetitle}}</h3>
+<form name="login" method="post" action="{{@BASE}}login" >
+	<F3:check if="{{@message}}">
+		<F3:true><p class="fail">{{@message}}</p></F3:true>
+	</F3:check>
+	<dl>
+		<dt><label for="userID">User ID</label></dt>
+		<dd><input type="text" name="userID" id="userID" value="{{@REQUEST.userID}}"/></dd>
+		<dt><label for="password">Password</label></dt>
+		<dd><input type="password" name="password" id="password"/></dd>
+		<F3:check if="{{@message}}">
+			<F3:true>
+				<p><img src="/captcha" alt="Captcha" title="Captcha security image"/></p>
+				<dt><label for="captcha">Verification Code</label><dt>
+				<dd><input type="text" name="captcha" id="captcha"/></dd>
+			</F3:true>
+		</F3:check>
+		<dd><input type="submit" name="submit" /></dd>
+	</dl>
+</form>
